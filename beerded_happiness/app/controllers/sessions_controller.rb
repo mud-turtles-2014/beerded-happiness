@@ -5,6 +5,13 @@ class SessionController < ApplicationController
 
   def create
     user = User.find_by(username: params[:username]).try(:authenticate, params[:password])
+    if user
+      session[:id] = user.id
+      redirect_to '/'
+    else
+      flash[:error] = "Login fail womp womp"
+      redirect_to '/login'
+    end
   end
 
   def destroy
