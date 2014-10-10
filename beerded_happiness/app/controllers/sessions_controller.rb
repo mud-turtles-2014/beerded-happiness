@@ -1,10 +1,11 @@
 class SessionsController < ApplicationController
 
   def new
+    @user = User.new
   end
 
   def create
-    user = User.find_by(username: params[:username]).try(:authenticate, params[:password])
+    user = User.find_by(name: params[:name]).try(:authenticate, params[:password])
     if user
       session[:id] = user.id
       redirect_to '/'

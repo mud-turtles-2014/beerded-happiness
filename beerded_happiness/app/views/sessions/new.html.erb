@@ -1,0 +1,23 @@
+<h1>Log In</h1>
+<div class="error">
+  <p><%=flash[:error]%></p>
+</div>
+
+<%=form_tag do %>
+  <%=text_field_tag (:name), nil, placeholder: 'Name' %>
+  <%=password_field_tag (:password), nil, placeholder: "Password" %>
+  <%= submit_tag ("Log In") %>
+<% end %>
+
+<h1>Sign Up</h1>
+<div class="error">
+  <p><%=flash[:error]%></p>
+</div>
+<%= form_for @user do |f| %>
+<%= f.text_field :name, placeholder: "Name" %>
+<%= f.text_field :email, placeholder: "Email" %>
+<%= f.text_field :phone_number, placeholder: "Phone" %>
+<%= f.password_field :password, placeholder: "Password" %>
+<%= f.password_field :password_confirmation, placeholder: "Confirm Password" %>
+<%= f.submit "Sign Up" %>
+<% end  %>
