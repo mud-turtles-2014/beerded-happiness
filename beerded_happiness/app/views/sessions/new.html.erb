@@ -11,7 +11,12 @@
 
 <h1>Sign Up</h1>
 <div class="error">
-  <p><%=flash[:error]%></p>
+  <% if flash[:signin_error] %>
+    <% flash[:signin_error].each do |msg| %>
+    <p><%= msg %></p>
+    <%end%>
+  <%end%>
+
 </div>
 <%= form_for @user do |f| %>
 <%= f.text_field :name, placeholder: "Name" %>
