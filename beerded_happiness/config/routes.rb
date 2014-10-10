@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  resources :events do
+    resources :games, shallow: true
+  end
+
+  resources :users
+
+  # get '/login' => 'rasession#index'
+  root 'session#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
