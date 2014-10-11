@@ -2,11 +2,12 @@
 <div class="error">
   <p><%=flash[:error]%></p>
 </div>
+  <p><%=flash[:login_message]%></p>
 
-<%=form_tag do %>
-  <%=text_field_tag (:name), nil, placeholder: 'Name' %>
-  <%=password_field_tag (:password), nil, placeholder: "Password" %>
-  <%= submit_tag ("Log In") %>
+<%= form_for @session, url: login_path do |f| %>
+  <%= f.text_field :name, placeholder: 'Name' %><br>
+  <%= f.password_field :password, placeholder: "Password" %><br>
+  <%= f.submit "Log In" %>
 <% end %>
 
 <h1>Sign Up</h1>
@@ -19,10 +20,10 @@
 
 </div>
 <%= form_for @user do |f| %>
-<%= f.text_field :name, placeholder: "Name" %>
-<%= f.text_field :email, placeholder: "Email" %>
-<%= f.text_field :phone_number, placeholder: "Phone" %>
-<%= f.password_field :password, placeholder: "Password" %>
-<%= f.password_field :password_confirmation, placeholder: "Confirm Password" %>
+<%= f.text_field :name, placeholder: "Name" %><br>
+<%= f.text_field :email, placeholder: "Email" %><br>
+<%= f.text_field :phone_number, placeholder: "Phone" %><br>
+<%= f.password_field :password, placeholder: "Password" %><br>
+<%= f.password_field :password_confirmation, placeholder: "Confirm Password" %><br>
 <%= f.submit "Sign Up" %>
 <% end  %>
