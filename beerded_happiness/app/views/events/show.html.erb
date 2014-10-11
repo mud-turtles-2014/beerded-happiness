@@ -1,11 +1,24 @@
-<h2><%= @event.title %></h2>
-<p>Hosted By: <%= @event.creator.name %></p>
+<div class="queue-bar">
 
-<h3>Queue</h3>
-<%= button_to "Sign Me Up!", event_games_path(@event) %>
+	<div class="current-game">
+		<p>Current Game</p>
+	</div>
 
-<% @games.each do |game| %>
-<p>	<%= game.users.first.name %> </p>
+	<h3>Queue</h3>
+	<%= button_to "Sign Me Up!", event_games_path(@event) %>
+	<div class="game-in-queue">
+		<% @games.each do |game| %>
 
-<% end %>
-<!-- Show event stats here>
+				<% game.users.each do |user| %>
+						<%= user.name %><br>
+				<% end %>
+
+		<% end %>
+	</div>
+
+</div>
+
+<div class="event-details"
+	<h2><%= @event.title %></h2>
+	<p>Hosted By: <%= @event.creator.name %></p>
+</div>
