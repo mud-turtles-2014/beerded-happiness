@@ -1,11 +1,6 @@
 <h2>Create New Event</h2>
 <%= form_for @event do |f| %>
-  <select name="status">
-    <option value="">Select Status</option>
-    <option value="active">Active</option>
-    <option value="inactive">Inactive</option>
-    <option value="past">Past</option>
-  </select>
+  <%= select("event", "status", %w[Active Inactive Past], {prompt: 'Select Status'}) %>
   <br>
   <%= f.text_field :title, placeholder: "Title" %><br>
   <%= f.text_field :creator_id, placeholder: "Creator_ID" %><br>
