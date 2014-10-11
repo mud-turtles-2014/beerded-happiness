@@ -6,10 +6,13 @@ Rails.application.routes.draw do
   resources :users, except: :index
 
   # get '/login' => 'rasession#index'
-  root 'sessions#index'
+  root 'sessions#new'
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
+
+  get '/login' => 'users#new'
+  post '/login' => 'users#create'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,10 +1,9 @@
-
 <div class="error">
   <p><%=flash[:error]%></p>
 </div>
 
 <%=form_tag do %>
-  <%=text_field_tag (:username)  %>
-  <%=password_field_tag (:password) %>
+  <%=text_field_tag (:username)  %><br>
+  <%=password_field_tag (:password) %><br>
   <%= submit_tag ("Login") %>
 <% end %>
