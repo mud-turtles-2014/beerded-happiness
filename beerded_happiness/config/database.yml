@@ -7,6 +7,7 @@ default: &default
 
 development:
   <<: *default
+  database: beerded_happiness_development
 
 test:
   <<: *default
@@ -15,5 +16,4 @@ test:
 production:
   <<: *default
   database: beerded_happiness_production
-  username: beerded_happiness
-  password: <%= ENV['BEERDED_HAPPINESS_DATABASE_PASSWORD'] %>
+
