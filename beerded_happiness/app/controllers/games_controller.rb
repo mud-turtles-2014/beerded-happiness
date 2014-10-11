@@ -6,4 +6,14 @@ class GamesController < ActionController::Base
 	def show
 		@game = Game.find(params[:id])
 	end
+
+	def create
+		p "*" * 50
+		p session[:user_id]
+		@event = Event.find(params[:event_id])
+		@game  = Game.create(status:"pending")
+		@game.users << User.find(session[:user_id])
+		@event.games << @game
+		redirect_to event_path(@event)
+	end
 end

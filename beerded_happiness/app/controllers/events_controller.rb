@@ -18,6 +18,7 @@ class EventsController < ApplicationController
   end
 
   def show
+    @games = Event.find(params[:id]).games
   end
 
   def edit
