@@ -1,0 +1,23 @@
+<%= button_to 'Create Event', new_event_path, :method => :get %>
+
+<h2>Active Events</h2>
+  <% if @active_events.empty? %>
+    <p>No Active Events...</p>
+  <% else %>
+    <%= render 'event_display', events: @active_events %>
+  <% end %>
+
+<h2>Inactive Events</h2>
+  <% if @inactive_events.empty? %>
+    <p>No Inactive Events...</p>
+  <% else %>
+    <%= render 'event_display', events: @inactive_events %>
+  <% end %>
+
+<h2>Past Events</h2>
+  <% if @past_events.empty? %>
+    <p>No Past Events...</p>
+  <% else %>
+    <%= render 'event_display', events: @past_events %>
+  <% end %>
+
