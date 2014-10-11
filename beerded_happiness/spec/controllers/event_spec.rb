@@ -2,6 +2,8 @@ require 'rails_helper'
 require 'spec_helper'
 
 describe EventsController do
+  let(:user) { User.create(name: "numichuu", password: "test", password_confirmation: "test", phone_number: "123-123-1234", email:"numichuu@gmail.com")}
+  let(:new_event) { Event.create(title: "BeerFest", status: "Active", creator_id: user.id) }
 
   describe "#index" do
     it "renders the index template" do
