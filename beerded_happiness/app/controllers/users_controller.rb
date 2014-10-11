@@ -8,10 +8,11 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:id] = @user.id
+      flash[:login_message] = "Successful Signup! Now you can Login"
       redirect_to root_path
     else
       flash[:signin_error] = @user.errors.full_messages
-      redirect_to "/login"
+      redirect_to root_path
     end
   end
 

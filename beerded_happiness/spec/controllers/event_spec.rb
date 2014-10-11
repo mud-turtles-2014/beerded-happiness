@@ -40,4 +40,40 @@ describe EventsController do
     end
   end
 
+  describe "edit" do
+    it "assigns the chosen event" do
+      get :edit, id: new_event.id
+      expect(assigns(:event)).to eq new_event
+    end
+  end
+
+  describe "update" do
+    it "updates the event's attributes" do
+      new_title = "BP EXTRAVAGANZA"
+      patch :update, id: new_event.id, event: {title: new_title}
+      new_event.reload
+      expect(new_event.title).to eq new_title
+    end
+  end
+
+  describe "destroy" do
+    before do
+      new_event
+    end
+
+    let(:delete_event) {delete :destroy, id: new_event.id}
+
+    it "removes particular event from database" do
+        expect{
+        delete :destroy, id: new_event.id
+        }.to change(Event,:count).by(-1)
+    end
+
+    it "redirects to the events page" do
+      expect(delete_event).to redirect_to events_path
+    end
+  end
+
+
+
 end

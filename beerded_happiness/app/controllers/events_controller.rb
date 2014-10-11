@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  before_action :find_event, only: [:show, :edit, :update, :destroy]
 
   def index
     @active_events = Event.where(status: "Active")
@@ -17,10 +18,26 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event = Event.find(params[:id])
+  end
+
+  def edit
+  end
+
+  def update
+    @event.update(event_params)
+    redirect_to events_path
+  end
+
+  def destroy
+    @event.destroy
+    redirect_to events_path
   end
 
   private
+
+  def find_event
+    @event = Event.find(params[:id])
+  end
 
   def event_params
     params.require(:event).permit(:title, :status, :creator_id)
