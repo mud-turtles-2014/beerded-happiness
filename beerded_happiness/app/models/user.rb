@@ -10,4 +10,16 @@ class User < ActiveRecord::Base
   validates :email, presence: true
   validates :phone_number, presence: true
 
+  def notify
+
+  	@client = Twilio::REST::Client.new ENV['TWILIO_SID'], ENV[
+  		'TWILIO_AUTH_TOKEN']
+ 
+		@client.account.messages.create({
+			:from => '+16467833007', 
+			:to => self.phone_number, 
+			:body => 'It is your turn to play Beer Pong!',  
+		})
+	end
+
 end
