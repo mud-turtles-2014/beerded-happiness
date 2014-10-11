@@ -21,20 +21,21 @@ describe EventsController do
   end
 
    describe "#create" do
+    let!(:create_post) { post :create, :event => {title: "DBC BP", status: "Active", creator_id: user.id} }
+
     it "adds a new event to the database" do
-      post :create, event: {title: "DBC BP", status: "Active", creator_id: user.id}
       expect(Event.where(title: "DBC BP")).to exist
     end
 
     it "redirects events index page" do
-      post :create, event: {title: "BeerPong Fest", status: "Active", creator_id: user.id}
-      response.should redirect_to events_path
+      expect(create_post).to redirect_to events_path
     end
+  end
 
-    # it "renders form with new event" do
-    #   get :new
-    #   expect(assigns(:event)).to be_a_new Event
-    # end
+  describe "#show" do
+    it "renders show template" do
+      expect(get :show, id: new_event.id).to render_template(:show)
+    end
   end
 
 end
