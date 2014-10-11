@@ -2,5 +2,10 @@
 <p>Hosted By: <%= @event.creator.name %></p>
 
 <h3>Queue</h3>
+<%= button_to "Sign Me Up!", event_games_path(@event) %>
 
+<% @games.each do |game| %>
+<p>	<%= game.users.first.name %> </p>
+
+<% end %>
 <!-- Show event stats here>
