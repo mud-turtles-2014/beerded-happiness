@@ -8,8 +8,6 @@ class GamesController < ActionController::Base
 	end
 
 	def create
-		p "*" * 50
-		p session[:user_id]
 		@event = Event.find(params[:event_id])
 		@game  = Game.create(status:"pending")
 		@game.users << User.find(session[:user_id])
