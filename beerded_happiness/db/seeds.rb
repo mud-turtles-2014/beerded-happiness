@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+user = User.create(name: "numichuu", password: "test", password_confirmation: "test", phone_number: "123-123-1234", email:"numichuu@gmail.com")
+new_event = Event.create(title: "BeerFest", status: "Active", creator_id: user.id)
+new_game = Game.create(status: "Active", winner_id: user.id, event: new_event)
+new_game.users << user
