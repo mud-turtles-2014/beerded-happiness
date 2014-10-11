@@ -1,0 +1,8 @@
+<h2>Create New Game</h2>
+<%= form_for @game do |f| %>
+  <%= select("game", "status", %w[Active Inactive Past], {prompt: 'Select Status'}) %>
+  <br>
+  <%= f.text_field :user_id, placeholder: "User_ID" %><br>
+  <!-- change to hidden field once sign in is working = f.hidden_field :user,  %> -->
+  <%= f.submit "Create Game", :disable_with => 'Creating...'%>
+<% end %>
