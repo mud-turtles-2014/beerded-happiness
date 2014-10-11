@@ -1,0 +1,14 @@
+<h2>Create New Event</h2>
+<%= form_for @event do |f| %>
+  <select name="status">
+    <option value="">Select Status</option>
+    <option value="active">Active</option>
+    <option value="inactive">Inactive</option>
+    <option value="past">Past</option>
+  </select>
+  <br>
+  <%= f.text_field :title, placeholder: "Title" %><br>
+  <%= f.text_field :creator_id, placeholder: "Creator_ID" %><br>
+  <!-- change to hidden field once sign in is working = f.hidden_field :creator,  %> -->
+  <%= f.submit "Create Event", :disable_with => 'Creating...'%>
+<% end %>
