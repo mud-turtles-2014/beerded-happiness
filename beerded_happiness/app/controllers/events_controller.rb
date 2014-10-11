@@ -19,7 +19,11 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
-    @games = Game.where(event_id: @event.id)
+    @games = Event.find(params[:id]).games
+
+    if @event.current_game.users.find(session[:user_id])
+      redirect_to game_path(@event.current_game)
+    end
   end
 
   def edit
