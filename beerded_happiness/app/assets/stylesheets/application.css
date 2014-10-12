@@ -177,6 +177,12 @@ section.top-left-box {
 section.top-left-box div.queue {
 	color:#333333;
 }
+section.top-left-box div.user-in-queue {
+	color:black;
+	background-color:#B81D18;
+	border-radius:5px;
+	margin-bottom: .5em;
+}
 section.top-left-box div.preamble {
 	background:#ffffff;
 	color:#666666;
@@ -194,7 +200,12 @@ aside.left-bottom-box ul {
 	padding:0.5em 0 2em 0;
 }
 aside.left-bottom-box h3 {
-	color:#B6B6B6;
+	color:white;
+	margin:0;
+	padding:0 0 0.825em 0;
+}
+aside.left-bottom-box p {
+	color:white;
 	margin:0;
 	padding:0 0 0.825em 0;
 }
