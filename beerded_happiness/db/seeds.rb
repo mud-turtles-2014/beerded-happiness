@@ -10,3 +10,12 @@ user = User.create(name: "numichuu", password: "test", password_confirmation: "t
 new_event = Event.create(title: "BeerFest", status: "Active", creator_id: user.id)
 new_game = Game.create(status: "Active", winner_id: user.id, event: new_event)
 new_game.users << user
+
+new_game2 = Game.create(status: "Active", winner_id: user.id, event: new_event)
+new_game2.users << user
+new_game3 = Game.create(status: "Active", winner_id: user.id, event: new_event)
+new_game3.users << user
+new_game4 = Game.create(status: "Active", winner_id: user.id, event: new_event)
+new_game4.users << user
+new_game5 = Game.create(status: "Active", winner_id: user.id, event: new_event)
+new_game5.users << user
