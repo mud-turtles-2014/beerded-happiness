@@ -26,6 +26,10 @@
 					<% game.users.each do |user| %>
 							<div class="user-in-queue">
 								<%= user.name %><br>
+								<% if user == @current_user || @current_user == @creator %>
+								  <%= button_to "Remove", {:controller => :games,
+      						:action => 'destroy', :id => game.id }, :method => :delete %>
+								<% end %>
 							</div>
 					<% end %>
 
