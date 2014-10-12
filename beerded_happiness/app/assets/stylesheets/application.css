@@ -45,11 +45,11 @@ div,article,section,header,footer,nav,figure,li	{
 } /* Apply a natural box layout */
 
 ::-moz-selection {
-	background:#666666;
+	background:#464646;
 	color:#fff;
 }
 ::selection {
-	background:#666666;
+	background:#464646;
 	color:#fff;
 }
 
@@ -62,17 +62,15 @@ body,input,textarea {
 
 /* Families */
 body { 
-	font-family: helvetica, verdana, arial, sans-serif; 
+	font-family:"Verdana", sans-serif;
 }
 h2,h3 { 
-	font-family:helvetica, "arial narrow", arial, verdana, sans-serif;
+	font-family:"Verdana", sans-serif;
 }
 
 /* Headings */
-h1,h2,h3,h4,h5,h6 {
-	font-weight:normal;
-}
 h1 {
+	font-size: 1.1em;
 	background:#B81D18; 
 	color:#fff; 
 	display:inline-block; 
@@ -81,7 +79,6 @@ h1 {
 }
 h2 {
 	color:#666666;
-	font-weight:900; 
 	/* Heavy */ 
 	font-size:6em; 
 	letter-spacing:1px; 
@@ -90,7 +87,6 @@ h2 {
 h3 {
 	color:#B6B6B6;
 	font-size:2.25em;
-	font-weight:200;
 	/* Thin */
 	letter-spacing:1px;
 	line-height:1em;
@@ -100,7 +96,6 @@ h3 {
 h4 {
 	color: #f2f2f2;
 	font-size:2.25em;
-	font-weight:200;
 	/* Thin */
 	letter-spacing:1px;
 	line-height:1em;
@@ -136,14 +131,12 @@ div.participation p a:hover	{
 /* Paragraph styles */
 p,li {
 	font-size:1em;
-	font-weight:400;
 	/* Regular */
 	line-height:1.5em;
 	padding:0.5em 0;
 	margin:0;
 }
 h1,section.top-left-box div.summary p,div.requirements p:last-child {
-	font-weight:300;
 	letter-spacing:2px;
 }
 section.top-left-box div.summary p:last-child, div.requirements p:last-child {
@@ -155,13 +148,12 @@ section.top-left-box div.summary p:last-child, div.requirements p:last-child {
 /* Other bits & bobs */
 em,strong{
 	font-style:normal;
-	font-weight:400;
 }
 
 /* ============================== */
 
 html {
-	background:#B6B6B6;
+	background:#464646;
 	padding:5%;
 }
 body {
@@ -177,11 +169,22 @@ section.top-left-box {
 section.top-left-box div.queue {
 	color:#333333;
 }
+section.top-left-box .btn {
+	color:#B81D18;
+	font-size: 1.2em;
+	background-color:#202020;
+	border-radius:8px;
+	border:.25em solid #B81D18;
+	margin-bottom:.5em;
+	padding:.25em .5em;
+}
 section.top-left-box div.user-in-queue {
 	color:black;
+	font-size: 1.2em;
 	background-color:#B81D18;
-	border-radius:5px;
-	margin-bottom: .5em;
+	/*border-radius:5px;*/
+	margin-bottom:.25em;
+	padding:1em;
 }
 section.top-left-box div.preamble {
 	background:#ffffff;
