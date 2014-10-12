@@ -9,6 +9,7 @@ class EventsController < ApplicationController
 
   def new
     @event = Event.new
+    @current_user = current_user
   end
 
   def create
@@ -38,6 +39,19 @@ class EventsController < ApplicationController
     @event.destroy
     redirect_to events_path
   end
+
+  def search
+    if Event.find(params[:q])
+      redirect_to event_path(Event.find(params[:q]))
+    else
+      flash[:search] = "No event found."
+      redirect_to events_path
+    end
+  end
+
+  # def search_post
+  #   redirect_to search_events_path(params[:q])
+  # end
 
   private
 
