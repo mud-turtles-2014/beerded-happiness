@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
 		@client.account.messages.create({
 			:from => '+16467833007', 
 			:to => self.phone_number, 
-			:body => 'It is your turn to play Beer Pong!, you will be playing #{opponent.name}',  
+			:body => "It is your turn to play Beer Pong!, you will be playing #{opponent.name}",  
 		})
 	end
 
