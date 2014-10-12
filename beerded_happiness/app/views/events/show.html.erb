@@ -9,8 +9,10 @@
 			<p>Current Game Placeholder</p>
 		</div>
 
-		<h3>Queue</h3>
-		<%= button_to "Sign Me Up!", event_games_path(@event) %>
+		<%= button_to "Join Queue", event_games_path(@event), {:class => "btn"} %>
+
+		<h3>Up Next:</h3>
+
 		<div class="game-in-queue">
 			<% @games.each do |game| %>
 
