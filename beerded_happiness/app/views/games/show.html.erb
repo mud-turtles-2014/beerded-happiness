@@ -2,5 +2,9 @@
 <p>Status: <%= @game.status %></p>
 <p>Players: <br>
 <% @game.users.each do |user| %>
-	<%= user.name %> <br>
+	<%= user.name %> 
 <% end %>
+
+<%= button_to "I Won!", { :controller => "games", :action => "update", :won => true}, :method => :patch%>
+
+<%= button_to "I Lost :(", { :controller => "games", :action => "update", :won => false}, :method => :patch%>
