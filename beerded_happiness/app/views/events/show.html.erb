@@ -4,15 +4,15 @@
   </header>
 
 	<div class="queue-bar">
-
-		<div class="current-game">
-			<p>Currently on the Table:</p>
-			<%= @current_players.first.name %>
+		<% if @current_players %>
+			<div class="current-game">
+				<p>Currently on the Table:</p>
+				<%= @current_players.first.name %>
 			
-			VS
-			<%= @current_players.second.name %>
+				VS
+				<%= @current_players.second.name %>
 			
-
+		<% end %>
 		</div>
 
 		<h3>Queue</h3>
