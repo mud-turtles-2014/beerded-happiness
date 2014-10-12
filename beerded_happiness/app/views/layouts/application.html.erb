@@ -7,11 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<div class="header">
+	<header>
 		<% if current_user %>
 			Hey there, <%= current_user.name %>
 			<%= button_to "Logout", logout_path %>
 		<% end %> 
+	</header>
 	<div class="page-wrapper">
 		<%= yield %>
 	</div>

@@ -21,7 +21,7 @@ class Event < ActiveRecord::Base
   end
 
   def two_games?
-    if self.games.count == 2
+    if current_game == nil && self.games.where(status: "pending").count == 2
       start_queue
     end
   end
