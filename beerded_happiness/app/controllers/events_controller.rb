@@ -21,6 +21,7 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
     @games = Event.find(params[:id]).games.where(status: "pending")
+    @winners = @event.leaderboard
 
     if @event.current_game
       @current_players = @event.currently_playing

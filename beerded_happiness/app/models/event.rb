@@ -26,6 +26,15 @@ class Event < ActiveRecord::Base
     end
   end
 
+  def leaderboard
+    winners_array = []
+    winners_hash = self.games.group('winner_id').order('count_id desc').count('id')
+    winners_hash.each do |winner_id, wins|
+      winners_array << { User.find_by(id: winner_id).name => wins }
+    end
+    winners_array
+  end
+
   def currently_playing
     self.current_game.users
   end
@@ -40,10 +49,7 @@ class Event < ActiveRecord::Base
       new_game = self.games.create(status:"pending")
       new_game.users << winner
     end
-
-
   end
-
 end
 
 #comment
