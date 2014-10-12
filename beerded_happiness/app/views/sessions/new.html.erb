@@ -1,29 +1,41 @@
-<h1>Log In</h1>
-<div class="error">
-  <p><%=flash[:error]%></p>
-</div>
-  <p><%=flash[:login_message]%></p>
+<section class="top-left-box">
+  <header role="banner">
+    <h1>Beerded Happiness</h1>
+  </header>
 
-<%= form_for :session, url: login_path do |f| %>
-  <%= f.text_field :name, placeholder: 'Name' %><br>
-  <%= f.password_field :password, placeholder: "Password" %><br>
-  <%= f.submit "Log In" %>
-<% end %>
+  <div class="signup-box">
+    <h3>Sign Up</h3>
+    <div class="error">
+      <% if flash[:signin_error] %>
+        <% flash[:signin_error].each do |msg| %>
+        <%= msg %>
+        <%end%>
+      <%end%>
+    </div>
+    <%= form_for @user do |f| %>
+      <p><%= f.text_field :name, placeholder: "Name" %><br>
+      <%= f.text_field :email, placeholder: "Email" %><br>
+      <%= f.text_field :phone_number, placeholder: "Phone" %><br>
+      <%= f.password_field :password, placeholder: "Password" %><br>
+      <%= f.password_field :password_confirmation, placeholder: "Confirm Password" %></p>
+      <%= f.submit "Sign Up" %>
+    <% end  %>
+  </div>
 
-<h1>Sign Up</h1>
-<div class="error">
-  <% if flash[:signin_error] %>
-    <% flash[:signin_error].each do |msg| %>
-    <p><%= msg %></p>
-    <%end%>
-  <%end%>
+<div class="login-box">
+    <h3>Log In</h3>
+    <div class="error">
+      <%=flash[:error]%>
+    </div>
+      <p><%=flash[:login_message]%></p>
+    <%= form_for :session, url: login_path do |f| %>
+      <p><%= f.text_field :name, placeholder: 'Name' %><br>
+      <%= f.password_field :password, placeholder: "Password" %></p>
+      <%= f.submit "Log In" %>
+    <% end %>
+  </div>
+</section>
 
-</div>
-<%= form_for @user do |f| %>
-<%= f.text_field :name, placeholder: "Name" %><br>
-<%= f.text_field :email, placeholder: "Email" %><br>
-<%= f.text_field :phone_number, placeholder: "Phone" %><br>
-<%= f.password_field :password, placeholder: "Password" %><br>
-<%= f.password_field :password_confirmation, placeholder: "Confirm Password" %><br>
-<%= f.submit "Sign Up" %>
-<% end  %>
+<aside class="left-bottom-box">
+  <h3>Bringing drinking sports to the next level since 2014</h3>
+</aside>
