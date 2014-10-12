@@ -2,7 +2,6 @@
   <%= select("event", "status", %w[Active Inactive Past], {prompt: 'Select Status'}) %>
   <br>
   <%= f.text_field :title, placeholder: "Title" %><br>
-  <%= f.text_field :creator_id, placeholder: "Creator ID" %><br>
-  <!-- change to hidden field once sign in is working = f.hidden_field :creator,  %> -->
+  <%= f.hidden_field :creator_id, :value => @current_user.id %><br>
   <%= f.submit%>
 <% end %>

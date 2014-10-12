@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
+  get '/search', :action => 'search', :as => 'search', :controller => 'events'
+
   resources :events do
+    # get 'search/:id', :action => 'search', :as => 'search'rak
     resources :games, shallow: true
   end
 
