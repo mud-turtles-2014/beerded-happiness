@@ -21,6 +21,8 @@ class EventsController < ApplicationController
   end
 
   def show
+    @current_user = User.find(session[:user_id])
+    @creator = Event.find(params[:id]).creator
     @event = Event.find(params[:id])
     @games = Event.find(params[:id]).games.where(status: "pending")
     @winners = @event.leaderboard
@@ -35,9 +37,9 @@ class EventsController < ApplicationController
   end
 
   def edit
-    @creator = Event.find(params[:id]).creator
+    @current_user = Event.find(params[:id]).creator
 
-    if @creator != User.find(session[:user_id])
+    if @current_user!= User.find(session[:user_id])
       flash[:edit_error] = "You are not allowed to edit this event. Please ask the #{creator}"
       redirect_to events_path
     end

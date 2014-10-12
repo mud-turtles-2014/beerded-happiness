@@ -4,7 +4,7 @@ class Event < ActiveRecord::Base
   has_many :users, through: :event_users
   belongs_to :creator, class_name: "User", foreign_key: :creator_id
 
-  def current_game 
+  def current_game
   	@current_game = self.games.find_by(status: "current")
   end
 
