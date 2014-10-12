@@ -9,9 +9,7 @@ class Game < ActiveRecord::Base
   end
 
   def declare_winner(winner)
-    p "***************"
-    p winner
-    p "***************"
+    
   	self.update(winner_id: winner.id)
 		self.update(status: "ended")
  		self.event.next_game(winner)
