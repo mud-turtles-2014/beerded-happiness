@@ -50,6 +50,8 @@ class Event < ActiveRecord::Base
       new_game.users << winner
     end
   end
+
+  
 end
 
 #comment
