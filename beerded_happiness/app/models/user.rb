@@ -10,14 +10,14 @@ class User < ActiveRecord::Base
   validates :email, presence: true
   validates :phone_number, presence: true
 
-  def notify
+  def notify(opponent)
 
-  	
- 
+    @client = Twilio::REST::Client.new ENV['TWILIO_SID'], ENV['TWILIO_AUTH_TOKEN']
+
 		@client.account.messages.create({
 			:from => '+16467833007', 
 			:to => self.phone_number, 
-			:body => 'It is your turn to play Beer Pong!',  
+			:body => 'It is your turn to play Beer Pong!, you will be playing #{opponent.name}',  
 		})
 	end
 
