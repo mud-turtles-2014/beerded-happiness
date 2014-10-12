@@ -12,8 +12,7 @@ class User < ActiveRecord::Base
 
   def notify
 
-  	@client = Twilio::REST::Client.new ENV['TWILIO_SID'], ENV[
-  		'TWILIO_AUTH_TOKEN']
+  	
  
 		@client.account.messages.create({
 			:from => '+16467833007', 
