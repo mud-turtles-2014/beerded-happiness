@@ -4,7 +4,9 @@
   </header>
 
 	<div class="queue-bar">
-		<% if @current_players %>
+
+		<div class="current-game">
+			<% if @current_players %>
 			<div class="current-game">
 				<p>Currently on the Table:</p>
 				<%= @current_players.first.name %>
@@ -12,7 +14,7 @@
 				VS
 				<%= @current_players.second.name %>
 			
-		<% end %>
+			<% end %>
 		</div>
 
 		<%= button_to "Join Queue", event_games_path(@event), {:class => "btn"} %>
