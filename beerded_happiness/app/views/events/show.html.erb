@@ -8,10 +8,10 @@
 			<div class="current-game">
 				<p>Currently on the Table:</p>
 				<%= @current_players.first.name %>
-			
+
 				VS
 				<%= @current_players.second.name %>
-			
+
 		<% end %>
 		</div>
 
@@ -33,7 +33,7 @@
 
 	</div>
 
-	
+
 </section>
 
 <aside class="left-bottom-box">
@@ -42,15 +42,15 @@
 		<p>Hosted By: <%= @event.creator.name %></p>
 	</div>
 
-	<!-- <div class="leaderboard">
+	<div class="leaderboard">
 	  <h3>Leaderboard</h3>
 
-	  % @winners.each do |stats| %>
-	  	% stats.each_pair do |winner, wins | %>
-	  		%= winner %>:
-	  		%= wins %><br>
-	  	% end %>
-	  % end %>
+	  <% @winners.each do |stats| %>
+	  	<% stats.each_pair do |winner, wins | %>
+	  		<%= winner %>:
+	  		<%= wins %><br>
+	  	<% end %>
+	  <% end %>
 
-	</div> -->
+	</div>
 </aside>
