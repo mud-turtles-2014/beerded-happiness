@@ -22,8 +22,8 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @games = Event.find(params[:id]).games
 
-    if @event.current_game.users.find(session[:user_id])
-      redirect_to game_path(@event.current_game)
+    if @event.current_game && @event.current_game.is_player?(session[:user_id])
+        redirect_to game_path(@event.games.last)
     end
   end
 
@@ -48,6 +48,7 @@ class EventsController < ApplicationController
       redirect_to events_path
     end
   end
+
 
   # def search_post
   #   redirect_to search_events_path(params[:q])

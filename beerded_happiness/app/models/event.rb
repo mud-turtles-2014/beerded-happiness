@@ -9,7 +9,7 @@ class Event < ActiveRecord::Base
   end
 
   def start_queue
-  	if current_game.empty?
+  	unless current_game
   		self.games.second.update(status: "current")
   		self.games.second.users << first_player
   		self.games.first.destroy
@@ -19,6 +19,13 @@ class Event < ActiveRecord::Base
   def first_player
   	self.games.first.users.first
   end
+
+  def two_games?
+    if self.games.count == 2
+      start_queue
+    end
+  end
+
 end
 
 #comment
