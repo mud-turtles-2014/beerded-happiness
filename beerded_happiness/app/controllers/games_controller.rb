@@ -15,4 +15,10 @@ class GamesController < ActionController::Base
 		@event.two_games?
 		redirect_to event_path(@event)
 	end
+
+	def update
+		p "****************"
+		p params
+		p "****************"
+	end
 end
