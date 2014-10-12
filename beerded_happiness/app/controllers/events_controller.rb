@@ -21,6 +21,7 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
     @games = Event.find(params[:id]).games
+    @winners = @event.leaderboard
 
     if @event.current_game && @event.current_game.is_player?(session[:user_id])
         redirect_to game_path(@event.games.last)
