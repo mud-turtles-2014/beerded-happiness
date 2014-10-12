@@ -28,7 +28,9 @@ class Event < ActiveRecord::Base
     winners_array = []
     winners_hash = self.games.group('winner_id').order('count_id desc').count('id')
     winners_hash.each do |winner_id, wins|
-      winners_array << { User.find_by(id: winner_id).name => wins }
+      if winner_id != nil
+        winners_array << { User.find_by(id: winner_id).name => wins }
+      end
     end
     winners_array
   end
