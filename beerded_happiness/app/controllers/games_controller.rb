@@ -19,10 +19,18 @@ class GamesController < ActionController::Base
 	def update
 		@game = Game.find(params[:id])
 		
-		if params[:won]
+		if params[:won] == "true"
+			
 			@winner = User.find(session[:user_id])
+			p"*****************"
+			p "WE ARE IN THE TRUE BRANCH"
+			p params[:won]
+			p "****************"
 		else
-			@winner = @game.users.where.not(user_id: session[:user_id])
+			p"*****************"
+			p params[:won]
+			p "****************"
+			@winner = @game.users.where.not(id: session[:user_id]).first
 		end 
 		@game.declare_winner(@winner)
 		

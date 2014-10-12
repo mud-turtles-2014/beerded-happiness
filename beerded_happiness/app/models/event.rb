@@ -9,19 +9,17 @@ class Event < ActiveRecord::Base
   end
 
   def start_queue
-  	unless current_game
-  		self.games.second.update(status: "current")
-  		self.games.second.users << first_player
-  		self.games.first.destroy
-  	end
+  	first_pending = self.games.where(status: "pending").first
+  	first_user = first_pending.users.first
+    first_pending.destroy
+  	second_pending = self.games.where(status: "pending").first
+    second_pending.users << first_user
+    second_pending.update(status: "current")
   end
 
-  def first_player
-  	self.games.first.users.first
-  end
 
   def two_games?
-    if self.games.count == 2
+    if current_game == nil && self.games.where(status: "pending").count == 2
       start_queue
     end
   end

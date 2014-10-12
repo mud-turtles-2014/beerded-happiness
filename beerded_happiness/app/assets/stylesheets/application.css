@@ -160,6 +160,12 @@ body {
 	background:#202020;
 	text-align:center;
 }	
+
+header {
+	float:left;
+	z-index: 10;
+
+}
 div.page-wrapper {
 	z-index:2;
 }	
