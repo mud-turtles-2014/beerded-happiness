@@ -42,8 +42,8 @@ class Event < ActiveRecord::Base
   def next_game(winner)
     @next_game = self.games.where(status: "pending").first
     if @next_game
-      #@next_game.users.first.notify
       @next_game.users << winner
+      @next_game.users.last.notify(winner)
       @next_game.update(status: "current")
     else
       new_game = self.games.create(status:"pending")
