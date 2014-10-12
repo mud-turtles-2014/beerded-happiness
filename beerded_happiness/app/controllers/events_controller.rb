@@ -20,10 +20,14 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
-    @games = Event.find(params[:id]).games
+    @games = Event.find(params[:id]).games.where(status: "pending")
 
-    if @event.current_game && @event.current_game.is_player?(session[:user_id])
+    if @event.current_game
+      @current_players = @event.currently_playing
+
+      if @event.current_game.is_player?(session[:user_id])
         redirect_to game_path(@event.games.last)
+      end
     end
   end
 

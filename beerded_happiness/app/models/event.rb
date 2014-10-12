@@ -26,6 +26,24 @@ class Event < ActiveRecord::Base
     end
   end
 
+  def currently_playing
+    self.current_game.users
+  end
+
+  def next_game(winner)
+    @next_game = self.games.where(status: "pending").first
+    if @next_game
+      #@next_game.users.first.notify
+      @next_game.users << winner
+      @next_game.update(status: "current")
+    else
+      new_game = self.games.create(status:"pending")
+      new_game.users << winner
+    end
+
+
+  end
+
 end
 
 #comment
