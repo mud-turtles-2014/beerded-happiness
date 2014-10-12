@@ -6,7 +6,13 @@
 	<div class="queue-bar">
 
 		<div class="current-game">
-			<p>Current Game Placeholder</p>
+			<p>Currently on the Table:</p>
+			<%= @current_players.first.name %>
+			
+			VS
+			<%= @current_players.second.name %>
+			
+
 		</div>
 
 		<h3>Queue</h3>

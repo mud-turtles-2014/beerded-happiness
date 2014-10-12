@@ -26,6 +26,10 @@ class Event < ActiveRecord::Base
     end
   end
 
+  def currently_playing
+    self.current_game.users
+  end
+
 end
 
 #comment
