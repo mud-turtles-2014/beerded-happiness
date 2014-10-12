@@ -31,6 +31,15 @@ ul {
 	list-style: none;
 }
 
+.sessions-container {
+	text-align: center;
+}
+
+.welcome-container {
+	text-align: center;
+	font-size: 3em;
+}
+
 .queue-bar {
   text-align: center;
 }
@@ -40,19 +49,42 @@ ul {
 	border-radius: 5px;
 }
 
-/* portrait phone (< 480px) */
-@media screen and (max-width:39.9999em) {
+/* portrait phone  */
+@media screen and (max-width:59.9999em) {
+	.welcome-container {
+		padding: 0 10px;
+	}
+
+	.sessions-container{
+		padding: 0 10px;
+	}
+
+	.signup-box {
+	}
+
+	.login-box {
+	}
+	
 	.queue-bar {
     width: 100%;
   }
 
   .event-details {
-
   }
 }
 
 /* landscape phone and portrait tablet */
-@media screen and (min-width:40em) {
+@media screen and (min-width:60em) {
+	.sessions-container{
+		float: left;
+		padding: 0 10%;
+	}
+
+	.welcome-container {
+		float: right;
+		padding: 0 10%;
+	}
+
 	.queue-bar {
 		width: 20%;
 		float: left;
@@ -60,6 +92,39 @@ ul {
 
   .event-details {
   	width: 79%;
+  	float: right;
+  }
+
+  .branding-box {
+  }
+}
+
+/* landscape phone and portrait tablet */
+@media screen and (min-width:40em) {
+	.sessions-container{
+		float: left;/*
+		padding: 0 10%;
+	}
+
+	.welcome-container {
+		float: right;
+		padding: 0 10%;
+	}
+
+	.queue-bar {
+		width: 20%;
+		float: left;
+	}
+
+  .event-details {
+  	width: 79%;
+  	float: right;
+  }
+
+  .branding-box {
+  	margin-left: auto;
+    margin-right: auto;
+  	text-align: center;
   	float: right;
   }
 }
