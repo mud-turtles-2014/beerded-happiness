@@ -24,14 +24,16 @@ class Event < ActiveRecord::Base
     end
   end
 
-  # def leaderboard
-  #   winners_array = []
-  #   winners_hash = self.games.group('winner_id').order('count_id desc').count('id')
-  #   winners_hash.each do |winner_id, wins|
-  #     winners_array << { User.find_by(id: winner_id).name => wins }
-  #   end
-  #   winners_array
-  # end
+  def leaderboard
+    winners_array = []
+    winners_hash = self.games.group('winner_id').order('count_id desc').count('id')
+    winners_hash.each do |winner_id, wins|
+      if winner_id != nil
+        winners_array << { User.find_by(id: winner_id).name => wins }
+      end
+    end
+    winners_array
+  end
 
   def currently_playing
     self.current_game.users

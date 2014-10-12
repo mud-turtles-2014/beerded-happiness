@@ -25,5 +25,5 @@ new_game3.users << user4
 new_game4 = Game.create(status: "ended", winner_id: user3.id, event: new_event)
 new_game4.users << user5
 
-new_game5 = Game.create(status: "ended", winner_id: user.id, event: new_event)
+new_game5 = Game.create(status: "ended", winner_id: user2.id, event: new_event)
 new_game5.users << user

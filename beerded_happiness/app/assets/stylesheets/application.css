@@ -25,7 +25,7 @@ This CSS design was heavily inspired from the Creative Commons "Handcrafted" by 
 	padding:0;
 }
 
-div,article,section,header,footer,nav,figure,li	{
+div,article,section,header,nav,figure,li	{
 	position:relative; 
 } /* For absolutely positioning elements within containers  */
 
@@ -74,13 +74,13 @@ h1 {
 	background:#B81D18; 
 	color:#fff; 
 	display:inline-block; 
-	margin:0; 
+	margin:0 0 .5em 0; 
 	padding:0.5em 1em;
 }
 h2 {
 	color:#666666;
 	/* Heavy */ 
-	font-size:6em; 
+	font-size:2em; 
 	letter-spacing:1px; 
 	line-height:1em;
 }
@@ -94,8 +94,8 @@ h3 {
 	margin: 0;
 }
 h4 {
-	color: #f2f2f2;
-	font-size:2.25em;
+	color:#B6B6B6;
+	font-size:1.75em;
 	/* Thin */
 	letter-spacing:1px;
 	line-height:1em;
@@ -110,7 +110,7 @@ h5 {
 /* Links */
 a {
 	border-bottom:1px solid rgba(0,0,0,0.2);
-	color:#333333;
+	color:white;
 	text-decoration:none;
 	-moz-transition:border-color 0.2s ease-in-out;
 	-ms-transition:border-color 0.2s ease-in-out;
@@ -150,6 +150,16 @@ em,strong{
 	font-style:normal;
 }
 
+.btn {
+	color:#B81D18;
+	font-size: 1.2em;
+	background-color:#202020;
+	border-radius:8px;
+	border:.25em solid #B81D18;
+	margin-bottom:.5em;
+	padding:.25em .5em;
+}
+
 /* ============================== */
 
 html {
@@ -161,11 +171,6 @@ body {
 	text-align:center;
 }	
 
-header {
-	float:left;
-	z-index: 10;
-
-}
 div.page-wrapper {
 	z-index:2;
 }	
@@ -201,32 +206,50 @@ section.top-left-box div.preamble {
 div.main {
 	padding:5%;
 }	
-aside.left-bottom-box {
+aside.right-bottom-box {
 	background:#004687;
 	padding:5%;
 }
-aside.left-bottom-box ul {
+aside.right-bottom-box ul {
 	padding:0.5em 0 2em 0;
 }
-aside.left-bottom-box h3 {
+aside.right-bottom-box h3 {
 	color:white;
 	margin:0;
 	padding:0 0 0.825em 0;
 }
-aside.left-bottom-box p {
+aside.right-bottom-box p {
 	color:white;
 	margin:0;
 	padding:0 0 0.825em 0;
 }
 footer {
-	background:#66cc99;
+	z-index: 10;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: auto;
+  width: 100%;
+	background:#202020;
 	clear:both;
-	color:#333333;
-	padding:1em 5%;
-	width:80%;
+	font-size: 1em;
+	color:white;
+	padding:.5em;
 }
-footer a {
-	margin-right:0.5em;
+.greeting {
+	float:left;
+}
+.logout-wrapper {
+	float:right;
+}
+#btn-logout {
+	color:white;
+	font-size: 1em;
+	background-color:#202020;
+	border-radius:8px;
+	border:.25em solid white;
+	margin-bottom:.5em;
+	padding:.25em .5em;
 }
 div.explanation {
 	color:#666666;
@@ -261,17 +284,17 @@ div.requirements {
 @media screen and (min-width:550px) {
 
 	h2 {
-		font-size:8em;
+		font-size:2em;
 	}
 	section.top-left-box {
 		width:32.75%;
 	}
-	aside.left-bottom-box{
+	aside.right-bottom-box{
 		position:absolute;
 		right:0;
 		top:2.5%;
 		width:66.6%;
-		height:80%;
+		height:auto;
 	}
 	div.extra1 {
 		background:#666666;
