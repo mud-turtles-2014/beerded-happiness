@@ -1,10 +1,12 @@
-<h2><%= @game.event.title %> Game <%= @game.id %>:</h2>
-<p>Status: <%= @game.status %></p>
-<p>Players: <br>
-<% @game.users.each do |user| %>
-	<%= user.name %> 
-<% end %>
+<section class="top-left-box">
+	<h2><%= @game.event.title %> Game <%= @game.id %>:</h2>
+	<p>Status: <%= @game.status %></p>
+	<p>Players: <br>
+	<% @game.users.each do |user| %>
+		<%= user.name %> 
+	<% end %>
 
-<%= button_to "I Won!", { :controller => "games", :action => "update", :won => true}, :method => :patch%>
+	<%= button_to "I Won!", { :controller => "games", :action => "update", :won => true}, :method => :patch%>
 
-<%= button_to "I Lost :(", { :controller => "games", :action => "update", :won => false}, :method => :patch%>
+	<%= button_to "I Lost :(", { :controller => "games", :action => "update", :won => false}, :method => :patch%>
+</section>

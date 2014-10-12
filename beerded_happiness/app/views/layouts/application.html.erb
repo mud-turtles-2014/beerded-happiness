@@ -7,14 +7,20 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<header>
-		<% if current_user %>
-			Hey there, <%= current_user.name %>
-			<%= button_to "Logout", logout_path %>
-		<% end %> 
-	</header>
+	
 	<div class="page-wrapper">
 		<%= yield %>
 	</div>
+
+	<footer>
+		<% if current_user %>
+			<div class="greeting">
+				Hey <%= current_user.name %>, --games-- til your turn!
+			</div>
+			<div class="logout-wrapper">
+				<%= button_to "Logout", logout_path, {:id => "btn-logout"} %>
+			</div>
+		<% end %> 
+	</footer>
 </body>
 </html>
