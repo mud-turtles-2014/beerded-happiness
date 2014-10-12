@@ -31,7 +31,7 @@ class EventsController < ApplicationController
       @current_players = @event.currently_playing
 
       if @event.current_game.is_player?(session[:user_id])
-        redirect_to game_path(@event.current_game)
+        @current_game = @event.current_game
       end
     end
   end
