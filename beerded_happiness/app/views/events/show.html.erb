@@ -7,14 +7,13 @@
 
 		<div class="current-game">
 			<% if @current_players %>
-			<div class="current-game">
 				<p>Currently on the Table:</p>
 				<%= @current_players.first.name %>
-			
+
 				VS
 				<%= @current_players.second.name %>
-			
-			<% end %>
+		  <% end %>
+
 		</div>
 
 		<%= button_to "Join Queue", event_games_path(@event), {:class => "btn"} %>
@@ -35,7 +34,7 @@
 
 	</div>
 
-	
+
 </section>
 
 <aside class="right-bottom-box">
@@ -44,15 +43,15 @@
 		<p>Hosted By: <%= @event.creator.name %></p>
 	</div>
 
-	<!-- <div class="leaderboard">
+	<div class="leaderboard">
 	  <h3>Leaderboard</h3>
 
-	  % @winners.each do |stats| %>
-	  	% stats.each_pair do |winner, wins | %>
-	  		%= winner %>:
-	  		%= wins %><br>
-	  	% end %>
-	  % end %>
+	  <% @winners.each do |stats| %>
+	  	<% stats.each_pair do |winner, wins | %>
+	  		<%= winner %>:
+	  		<%= wins %><br>
+	  	<% end %>
+	  <% end %>
 
-	</div> -->
+	</div>
 </aside>
