@@ -5,6 +5,8 @@ class EventsController < ApplicationController
     @active_events = Event.where(status: "Active")
     @inactive_events = Event.where(status: "Inactive")
     @past_events = Event.where(status: "Past")
+
+    @current_user = User.find(session[:user_id])
   end
 
   def new
@@ -33,6 +35,12 @@ class EventsController < ApplicationController
   end
 
   def edit
+    @creator = Event.find(params[:id]).creator
+
+    if @creator != User.find(session[:user_id])
+      flash[:edit_error] = "You are not allowed to edit this event. Please ask the #{creator}"
+      redirect_to events_path
+    end
   end
 
   def update

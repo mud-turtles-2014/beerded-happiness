@@ -2,6 +2,7 @@
 <br><br>
 
 <%= flash[:search] %>
+<%= flash[:edit_error] %>
 
 <%= form_tag("/search", method: "get") do %>
   <%= label_tag(:q, "Search for:") %>
