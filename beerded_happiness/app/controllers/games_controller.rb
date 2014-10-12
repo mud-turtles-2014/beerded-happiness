@@ -12,6 +12,7 @@ class GamesController < ActionController::Base
 		@game  = Game.create(status:"pending")
 		@game.users << User.find(session[:user_id])
 		@event.games << @game
+		@event.two_games?
 		redirect_to event_path(@event)
 	end
 end
