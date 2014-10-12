@@ -1,4 +1,13 @@
 <%= button_to 'Create Event', new_event_path, :method => :get %>
+<br><br>
+
+<%= flash[:search] %>
+
+<%= form_tag("/search", method: "get") do %>
+  <%= label_tag(:q, "Search for:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %>
 
 <h2>Active Events</h2>
   <% if @active_events.empty? %>
