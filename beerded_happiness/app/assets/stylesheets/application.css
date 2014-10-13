@@ -198,12 +198,12 @@ section.top-left-box div.user-in-queue {
 	margin-bottom:.25em;
 	padding:1em;
 }
-section.top-left-box div.preamble {
+/*section.top-left-box div.preamble {
 	background:#ffffff;
 	color:#666666;
 	margin-left:-30%;
 	padding:5% 5% 5% 30%;
-}
+}*/
 div.main {
 	padding:5%;
 }	
