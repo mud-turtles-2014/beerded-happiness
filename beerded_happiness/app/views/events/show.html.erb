@@ -58,4 +58,8 @@
 	  <% end %>
 
 	</div>
+	<% if @current_game %>
+		<%= render 'game_show', game: @current_game %>
+	<% end %>
 </aside>
+
