@@ -18,7 +18,7 @@
       <%= f.text_field :phone_number, placeholder: "Phone" %><br>
       <%= f.password_field :password, placeholder: "Password" %><br>
       <%= f.password_field :password_confirmation, placeholder: "Confirm Password" %></p>
-      <%= f.submit "Sign Up" %>
+      <%= f.submit "Sign Up", :id => "btn-sign-up" %>
     <% end  %>
   </div>
 
@@ -31,11 +31,11 @@
     <%= form_for :session, url: login_path do |f| %>
       <p><%= f.text_field :name, placeholder: 'Name' %><br>
       <%= f.password_field :password, placeholder: "Password" %></p>
-      <%= f.submit "Log In" %>
+      <%= f.submit "Log In", :id => "btn-log-in" %>
     <% end %>
   </div>
 </section>
 
-<aside class="left-bottom-box">
+<aside class="right-bottom-box">
   <h3>Bringing drinking sports to the next level since 2014</h3>
 </aside>

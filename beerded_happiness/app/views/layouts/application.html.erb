@@ -15,10 +15,10 @@
 	<footer>
 		<% if current_user %>
 			<div class="greeting">
-				Hey <%= current_user.name %>, 
+				Hey <%= current_user.name %>
 				<% if current_user.games_to_go %>
-					You have <%= current_user.games_to_go %> games til your turn!
-				<% end %>
+					, you have <%= current_user.games_to_go %> games til your turn
+				<% end %>!
 			</div>
 			<div class="logout-wrapper">
 				<%= button_to "Logout", logout_path, {:id => "btn-logout"} %>
