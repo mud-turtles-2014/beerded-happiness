@@ -4,7 +4,7 @@
 	<p>Status: <%= @current_game.status %></p>
 
 
-	<%= button_to "I Won!", { :controller => "games", :action => "update", :won => true}, :method => :patch, :id => "btn-won" %>
+	<%= button_to "I Won!", { :controller => "games", :action => "update", :won => true, :game_id => @current_game.id}, :method => :patch, :id => "btn-won" %>
 
-	<%= button_to "I Lost :(", { :controller => "games", :action => "update", :won => false}, :method => :patch, :id => "btn-lost" %>
+	<%= button_to "I Lost :(", { :controller => "games", :action => "update", :won => false, :game_id => @current_game.id}, :method => :patch, :id => "btn-lost" %>
 </div>
