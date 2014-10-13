@@ -1,7 +1,8 @@
-<%= form_for @event do |f| %>
-  <%= select("event", "status", %w[Active Inactive Past], {prompt: 'Select Status'}) %>
-  <br>
-  <%= f.text_field :title, placeholder: "Title" %><br>
-  <%= f.hidden_field :creator_id, :value => @current_user.id %><br>
-  <%= f.submit%>
-<% end %>
+<div class="new-event-form">
+	<%= form_for @event do |f| %>
+	  <p><%= select("event", "status", %w[Active Inactive Past], {prompt: 'Select Status'}) %></p>
+	  <%= f.text_field :title, placeholder: "Title" %><br>
+	  <%= f.hidden_field :creator_id, :value => @current_user.id %><br>
+	  <%= f.submit 'Submit', class: "new-event-btn" %>
+	<% end %>
+</div>
