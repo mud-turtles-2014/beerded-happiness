@@ -17,7 +17,11 @@ class GamesController < ActionController::Base
 	end
 
 	def update
-		@game = Game.find(params[:id])
+		p "*" * 20
+		p params
+		p "*" * 20
+		@game = Game.find(params[:game_id])
+
 
 		if params[:won] == "true"
 			@winner = User.find(session[:user_id])

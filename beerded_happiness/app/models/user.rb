@@ -33,7 +33,10 @@ class User < ActiveRecord::Base
   def games_to_go
     if self.has_pending_games?
       @event = self.games.where(status: "pending").last.event
-      @event.games.take_while{|game| game.is_player?(self.id) == false}.count
+      p "*" * 10 
+      p @event
+      (@event.games.where(status: "pending").take_while{|game| game.is_player?(self.id) == false}.count) +1
+
     else
       return false
     end
