@@ -35,7 +35,7 @@ class User < ActiveRecord::Base
       @event = self.games.where(status: "pending").last.event
       p "*" * 10 
       p @event
-      @count = (@event.games.where(status: "pending").take_while{|game| game.is_player?(self.id) == false}.count) +1
+      (@event.games.where(status: "pending").take_while{|game| game.is_player?(self.id) == false}.count) +1
 
     else
       return false
