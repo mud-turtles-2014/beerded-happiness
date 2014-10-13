@@ -21,4 +21,22 @@ class User < ActiveRecord::Base
 		})
 	end
 
+  def has_pending_games?
+    games = self.games
+    if games.select{|game| game.status == "pending"}.count > 0
+      return true
+    else
+      return false
+    end
+  end
+
+  def games_to_go
+    if self.has_pending_games?
+      @event = self.games.where(status: "pending").last.event
+      @event.games.take_while{|game| game.is_player?(self.id) == false}.count
+    else
+      return false
+    end
+  end
+
 end
