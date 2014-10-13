@@ -176,6 +176,7 @@ div.page-wrapper {
 }	
 section.top-left-box {
 	padding:5%;
+	margin-bottom:2em;
 }	
 section.top-left-box div.queue {
 	color:#333333;
@@ -209,6 +210,7 @@ div.main {
 aside.right-bottom-box {
 	background:#004687;
 	padding:5%;
+	margin-bottom:2em;
 }
 aside.right-bottom-box ul {
 	padding:0.5em 0 2em 0;
