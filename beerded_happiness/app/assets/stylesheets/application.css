@@ -206,6 +206,15 @@ section.top-left-box div.user-in-queue {
 	margin-bottom:.5em;
 	padding:.25em .5em;
 }
+#btn-create-event, #btn-search {
+	color:#B81D18;
+	font-size: 1em;
+	background-color:#202020;
+	border-radius:8px;
+	border:.25em solid #B81D18;
+	margin-bottom:.5em;
+	padding:.25em .5em;
+}
 div.main {
 	padding:5%;
 }	
