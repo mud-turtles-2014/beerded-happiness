@@ -236,6 +236,15 @@ aside.right-bottom-box p {
 	margin:0;
 	padding:0 0 0.825em 0;
 }
+#btn-edit-event {
+	color:#B6B6B6;
+	background-color:#004687;
+	border-radius:8px;
+	border:.25em solid #B6B6B6;
+	margin-bottom:.5em;
+	padding:.25em .5em;
+	font-size:.75em;
+}
 .show-game {
 	background-color:#202020;
 	padding:auto;

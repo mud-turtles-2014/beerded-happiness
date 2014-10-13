@@ -1,6 +1,6 @@
 <% events.each do |event| %>
   <p><strong><%= link_to event.title, event_path(event) %></strong> - Hosted By: <%= event.creator.name %></p>
   <% if @current_user == event.creator %>
-    <%= button_to "Edit", edit_event_path(event), :method => :get %>
+    <%= button_to "Edit Event", edit_event_path(event), :method => :get, :id => "btn-edit-event" %>
   <% end %>
 <% end %>
