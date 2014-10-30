@@ -11,7 +11,7 @@ class Event < ActiveRecord::Base
   def start_queue
   	first_pending = self.games.where(status: "pending").first
   	first_user = first_pending.users.first
-    first_pending.destroy
+    first_pending.update(status: "ended")
   	second_pending = self.games.where(status: "pending").first
     second_pending.users << first_user
     second_pending.update(status: "current")
@@ -42,8 +42,8 @@ class Event < ActiveRecord::Base
   def next_game(winner)
     @next_game = self.games.where(status: "pending").first
     if @next_game
-      @next_game.users << winner
       @next_game.users.first.notify(winner)
+      @next_game.users << winner
       @next_game.update(status: "current")
     else
       new_game = self.games.create(status:"pending")
@@ -51,7 +51,7 @@ class Event < ActiveRecord::Base
     end
   end
 
-  
+
 end
 
 #comment
