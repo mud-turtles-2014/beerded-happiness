@@ -26,7 +26,7 @@ This CSS design was heavily inspired from the Creative Commons "Handcrafted" by 
 }
 
 div,article,section,header,nav,figure,li	{
-	position:relative; 
+	position:relative;
 } /* For absolutely positioning elements within containers  */
 
 .group:after {
@@ -35,7 +35,7 @@ div,article,section,header,nav,figure,li	{
 	font-size: 0;
 	content: ".";
 	clear: both;
-	visibility: hidden; 
+	visibility: hidden;
 } /* For clearing */
 
 *	{
@@ -56,32 +56,32 @@ div,article,section,header,nav,figure,li	{
 /* ============================== */
 
 /* Rendering */
-body,input,textarea { 
-	color:#999999; 
-} 
+body,input,textarea {
+	color:#999999;
+}
 
 /* Families */
-body { 
+body {
 	font-family:"Verdana", sans-serif;
 }
-h2,h3 { 
+h2,h3 {
 	font-family:"Verdana", sans-serif;
 }
 
 /* Headings */
 h1 {
 	font-size: 1.1em;
-	background:#B81D18; 
-	color:#fff; 
-	display:inline-block; 
-	margin:0 0 .5em 0; 
+	background:#B81D18;
+	color:#fff;
+	display:inline-block;
+	margin:0 0 .5em 0;
 	padding:0.5em 1em;
 }
 h2 {
 	color:#666666;
-	/* Heavy */ 
-	font-size:2em; 
-	letter-spacing:1px; 
+	/* Heavy */
+	font-size:2em;
+	letter-spacing:1px;
 	line-height:1em;
 }
 h3 {
@@ -120,7 +120,7 @@ a {
 }
 a:hover {
 	border-color:#333333;
-}	
+}
 section.top-left-box div.summary p a, div.explanation p a, div.participation p a	{
 	color:#333333;
 }
@@ -169,14 +169,14 @@ html {
 body {
 	background:#202020;
 	text-align:center;
-}	
+}
 div.page-wrapper {
 	z-index:2;
-}	
+}
 section.top-left-box {
 	padding:5%;
 	margin-bottom:2em;
-}	
+}
 section.top-left-box div.queue {
 	color:#333333;
 }
@@ -217,7 +217,7 @@ section.top-left-box div.user-in-queue {
 }
 div.main {
 	padding:5%;
-}	
+}
 aside.right-bottom-box {
 	background:#004687;
 	padding:5%;
